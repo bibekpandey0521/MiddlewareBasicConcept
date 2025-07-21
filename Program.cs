@@ -12,9 +12,9 @@ app.Use(async (HttpContext context, RequestDelegate next) => {
     await next(context);//it represent next middleware
 });
 
-//app.MapGet("/", () => "Hello World!");
-//middleware 2 
-app.UseMiddleware<MyCustomMiddleware>();
+//middleware 2
+//app.UseMiddleware<MyCustomMiddleware>();
+app.UseMyCustomMiddleware();
 
 
 app.Run(async (HttpContext context) => {
