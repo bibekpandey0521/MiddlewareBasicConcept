@@ -14,11 +14,13 @@ app.Use(async (HttpContext context, RequestDelegate next) => {
 
 //middleware 2
 //app.UseMiddleware<MyCustomMiddleware>();
-app.UseMyCustomMiddleware();
+//app.UseMyCustomMiddleware();
+
+app.UseHelloCustomMiddleware();
 
 
 app.Run(async (HttpContext context) => {
-    await context.Response.WriteAsync("Hello again middleware 3 \n");
+    await context.Response.WriteAsync("\nHello again middleware 3 \n");
 });
 
 
